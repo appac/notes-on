@@ -1,4 +1,4 @@
-# Notes On: Node.js
+# Notes On Web Dev
 
 This repo is a catalogue of notes I've taken on web development. The notes vary in scope, quality, value, and difficulty, and are not intended to be any kind of curriculum (or defacto source of reliable information. Many are succinct re-writes of existing articles or information sources.
 
