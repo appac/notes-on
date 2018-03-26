@@ -12,11 +12,9 @@ When you perform some operation in Node, a "reference counter" is iterated by on
 
 Executes callbacks scheduled by `setTimeout()` and `setInterval()`.
 
-Since other operations can delay the execution of a timers callback, a timer only dictates the minimum amount of time *after* with a callback can be executed, rather than the exact time at which it will execute.
+Since other operations can delay the execution of a timers callback, a timer only dictates the minimum amount of time *after* which a callback can be executed, rather than the exact time at which it will execute.
 
-This means that if you `setTimeout()` for *n* ms, the event loop would wait at least *n* ms before executing the callback. However, if in waiting some other operation had some immediate callback to be dealt with that took, say, 15ms, the total time before the timeout callback would be executed would be at least *n*+15.
-
-
+This means that if you `setTimeout()` for *n* ms, the event loop would wait at least *n* ms before executing the callback. However if whilst waiting,some other operation had some immediate callback to be dealt with that took 15ms, the total time before the timeout callback would be executed would be at least *n*+15.
 
 ### I/O Callbacks
 
@@ -39,7 +37,7 @@ This is where the `setImmediate()` callbacks are executed as noted above.
 
 ### close callabcks
 
-This phase handles "close events" for sockets or handles that were close abruplty. 
+This phase handles "close events" for sockets or handles that were close abruplty.
 
 Usually, these events are handled by `process.nextTick()`, which occures between every phase (or tick). When moving between phases, a `nextTickQueue` is processed, with any callbacks/events handled before the event loop can continue to the next phase.
 
