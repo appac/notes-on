@@ -7,7 +7,7 @@ Arrow functions are a shorter syntax means of writing functions in JavaScript. T
 
 This is why you'll see it stated (on the [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) for example) that arrow functions aren't suited for method functions. Because an arrow function does not define its own `this` value, it inherits from the enclosing context which can lead to situations where `this` refers to the global (or some other) context instead of what you'd like it to.
 
-This can sound like a limitation, but a shorter syntax means of writing functions with lexically capture their `this` value can be convenient. The key is understanding how arrow functions work, and where they're not suitable for use.
+This can sound like a limitation, but a shorter syntax means of writing functions which lexically capture their `this` value can be convenient. The key is understanding how arrow functions work, and where they're not suitable for use.
 
 In the example below, using an arrow function as a prototype method leaves us with `undefined`, because there is no `this.data` on the context the arrow function inherited. For Node.js, this context would be `global`, and in browser it would be `Window`.
 
@@ -71,7 +71,7 @@ console.log(ages);
 
 *The same done using arrow function implicit return syntax.*
 
-Notice too, the lack of parenthesis around the `player` parameter. If there is only a single parameter to work with, no parnthesis are required.
+Notice too, the lack of parentheses around the `player` parameter. If there is only a single parameter to work with, no parentheses are required.
 
 ```javascript
 const players = [
@@ -85,7 +85,7 @@ const players = [
   },
 ];
 
-const ages = players.map((player => player.age);
+const ages = players.map(player => player.age);
 
 console.log(ages);
 ```
